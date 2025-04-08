@@ -1,2 +1,0 @@
-/usr/bin/ar qc libai_lib.a CMakeFiles/ai_lib.dir/__/src/layer.cpp.o CMakeFiles/ai_lib.dir/__/src/ai.cpp.o
-/usr/bin/ranlib libai_lib.a
