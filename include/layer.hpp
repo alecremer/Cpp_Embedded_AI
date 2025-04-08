@@ -9,9 +9,9 @@ class Layer{
 public:
     Layer(int num_neurons);
 private:
-    const int num_neurons;
-    const vector<int> biases;
-    const vector<int> weights;
+    int num_neurons;
+    vector<int> biases;
+    vector<int> weights;
 };
 
 
