@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/ai.dir/src/main.cpp.o -o ai  include/libai_lib.a 
