@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ai_lib.dir/__/src/ai.cpp.o"
   "CMakeFiles/ai_lib.dir/__/src/ai.cpp.o.d"
-  "CMakeFiles/ai_lib.dir/__/src/main.cpp.o"
-  "CMakeFiles/ai_lib.dir/__/src/main.cpp.o.d"
+  "CMakeFiles/ai_lib.dir/__/src/layer.cpp.o"
+  "CMakeFiles/ai_lib.dir/__/src/layer.cpp.o.d"
   "libai_lib.a"
   "libai_lib.pdb"
 )

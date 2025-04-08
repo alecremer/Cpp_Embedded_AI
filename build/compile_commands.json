@@ -7,14 +7,14 @@
 },
 {
   "directory": "/home/ale/AI/build/include",
-  "command": "/usr/bin/c++  -I/home/ale/AI/include -g -o CMakeFiles/ai_lib.dir/__/src/ai.cpp.o -c /home/ale/AI/src/ai.cpp",
-  "file": "/home/ale/AI/src/ai.cpp",
-  "output": "include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o"
+  "command": "/usr/bin/c++  -I/home/ale/AI/include -g -o CMakeFiles/ai_lib.dir/__/src/layer.cpp.o -c /home/ale/AI/src/layer.cpp",
+  "file": "/home/ale/AI/src/layer.cpp",
+  "output": "include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o"
 },
 {
   "directory": "/home/ale/AI/build/include",
-  "command": "/usr/bin/c++  -I/home/ale/AI/include -g -o CMakeFiles/ai_lib.dir/__/src/main.cpp.o -c /home/ale/AI/src/main.cpp",
-  "file": "/home/ale/AI/src/main.cpp",
-  "output": "include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o"
+  "command": "/usr/bin/c++  -I/home/ale/AI/include -g -o CMakeFiles/ai_lib.dir/__/src/ai.cpp.o -c /home/ale/AI/src/ai.cpp",
+  "file": "/home/ale/AI/src/ai.cpp",
+  "output": "include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o"
 }
 ]

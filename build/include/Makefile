@@ -184,29 +184,29 @@ __/src/ai.cpp.s:
 	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.s
 .PHONY : __/src/ai.cpp.s
 
-__/src/main.o: __/src/main.cpp.o
-.PHONY : __/src/main.o
+__/src/layer.o: __/src/layer.cpp.o
+.PHONY : __/src/layer.o
 
 # target to build an object file
-__/src/main.cpp.o:
-	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o
-.PHONY : __/src/main.cpp.o
+__/src/layer.cpp.o:
+	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o
+.PHONY : __/src/layer.cpp.o
 
-__/src/main.i: __/src/main.cpp.i
-.PHONY : __/src/main.i
+__/src/layer.i: __/src/layer.cpp.i
+.PHONY : __/src/layer.i
 
 # target to preprocess a source file
-__/src/main.cpp.i:
-	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/main.cpp.i
-.PHONY : __/src/main.cpp.i
+__/src/layer.cpp.i:
+	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.i
+.PHONY : __/src/layer.cpp.i
 
-__/src/main.s: __/src/main.cpp.s
-.PHONY : __/src/main.s
+__/src/layer.s: __/src/layer.cpp.s
+.PHONY : __/src/layer.s
 
 # target to generate assembly for a file
-__/src/main.cpp.s:
-	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/main.cpp.s
-.PHONY : __/src/main.cpp.s
+__/src/layer.cpp.s:
+	cd /home/ale/AI/build && $(MAKE) $(MAKESILENT) -f include/CMakeFiles/ai_lib.dir/build.make include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.s
+.PHONY : __/src/layer.cpp.s
 
 # Help Target
 help:
@@ -223,9 +223,9 @@ help:
 	@echo "... __/src/ai.o"
 	@echo "... __/src/ai.i"
 	@echo "... __/src/ai.s"
-	@echo "... __/src/main.o"
-	@echo "... __/src/main.i"
-	@echo "... __/src/main.s"
+	@echo "... __/src/layer.o"
+	@echo "... __/src/layer.i"
+	@echo "... __/src/layer.s"
 .PHONY : help
 
 

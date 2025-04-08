@@ -3,6 +3,7 @@
 
 CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
   /home/ale/AI/include/ai.hpp \
+  /home/ale/AI/include/layer.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -49,12 +50,15 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algobase.h \
+  /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_uninitialized.h \
+  /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
@@ -62,6 +66,7 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
   /usr/include/c++/13/bits/utility.h \
+  /usr/include/c++/13/bits/vector.tcc \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
   /usr/include/c++/13/clocale \
@@ -94,6 +99,7 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
   /usr/include/c++/13/tuple \
   /usr/include/c++/13/type_traits \
   /usr/include/c++/13/typeinfo \
+  /usr/include/c++/13/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -262,9 +268,17 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/c++/13/bits/string_view.tcc:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/features.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
 
@@ -278,43 +292,19 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/c++/13/stdexcept:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/c++/13/bits/uses_allocator.h:
-
-/usr/include/c++/13/bits/postypes.h:
-
 /usr/include/c++/13/bits/ostream_insert.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/13/bits/invoke.h:
 
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
-
 /usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/c++/13/bits/allocator.h:
+/usr/include/c++/13/bits/locale_classes.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+/home/ale/AI/src/main.cpp:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
-/usr/include/alloca.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/sched.h:
+/usr/include/ctype.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
@@ -336,15 +326,13 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/c++/13/bits/ios_base.h:
 
-/usr/include/c++/13/bits/move.h:
+/usr/include/c++/13/bits/locale_facets.tcc:
 
-/usr/include/c++/13/bits/basic_string.tcc:
+/usr/include/c++/13/bits/requires_hosted.h:
 
-/usr/include/c++/13/bit:
+/usr/include/c++/13/bits/string_view.tcc:
 
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/c++/13/type_traits:
+/usr/include/features.h:
 
 /usr/include/c++/13/backward/binders.h:
 
@@ -374,15 +362,35 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/c++/13/cwchar:
 
+/usr/include/alloca.h:
+
+/usr/include/c++/13/bits/move.h:
+
+/home/ale/AI/include/layer.hpp:
+
+/usr/include/c++/13/bits/allocator.h:
+
+/usr/include/c++/13/bits/stl_bvector.h:
+
+/usr/include/c++/13/bits/basic_string.tcc:
+
+/usr/include/c++/13/bit:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/c++/13/type_traits:
+
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/c++/13/bits/char_traits.h:
 
-/home/ale/AI/src/main.cpp:
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
 
-/usr/include/c++/13/bits/locale_classes.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
-/usr/include/ctype.h:
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
@@ -394,11 +402,19 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/time.h:
 
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/c++/13/bits/cpp_type_traits.h:
+
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/c++/13/string:
 
 /home/ale/AI/include/ai.hpp:
+
+/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/istream.tcc:
 
@@ -418,9 +434,23 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/stdc-predef.h:
 
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/postypes.h:
+
+/usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
 /usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/utility.h:
+
+/usr/include/c++/13/bits/vector.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
@@ -434,11 +464,13 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 
 /usr/include/c++/13/cstddef:
 
+/usr/include/c++/13/vector:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/13/bits/charconv.h:
-
 /usr/include/c++/13/bits/stl_pair.h:
+
+/usr/include/c++/13/bits/charconv.h:
 
 /usr/include/c++/13/cstdio:
 
@@ -549,17 +581,3 @@ CMakeFiles/ai.dir/src/main.cpp.o: /home/ale/AI/src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/c++/13/bits/cpp_type_traits.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:

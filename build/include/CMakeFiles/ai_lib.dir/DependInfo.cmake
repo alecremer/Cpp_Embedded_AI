@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ale/AI/src/ai.cpp" "include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o" "gcc" "include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o.d"
-  "/home/ale/AI/src/main.cpp" "include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o" "gcc" "include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o.d"
+  "/home/ale/AI/src/layer.cpp" "include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o" "gcc" "include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

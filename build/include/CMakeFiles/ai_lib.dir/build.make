@@ -69,10 +69,24 @@ include include/CMakeFiles/ai_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include include/CMakeFiles/ai_lib.dir/flags.make
 
+include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o: include/CMakeFiles/ai_lib.dir/flags.make
+include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o: /home/ale/AI/src/layer.cpp
+include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o: include/CMakeFiles/ai_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ale/AI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o"
+	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o -MF CMakeFiles/ai_lib.dir/__/src/layer.cpp.o.d -o CMakeFiles/ai_lib.dir/__/src/layer.cpp.o -c /home/ale/AI/src/layer.cpp
+
+include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ai_lib.dir/__/src/layer.cpp.i"
+	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ale/AI/src/layer.cpp > CMakeFiles/ai_lib.dir/__/src/layer.cpp.i
+
+include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ai_lib.dir/__/src/layer.cpp.s"
+	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ale/AI/src/layer.cpp -o CMakeFiles/ai_lib.dir/__/src/layer.cpp.s
+
 include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o: include/CMakeFiles/ai_lib.dir/flags.make
 include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o: /home/ale/AI/src/ai.cpp
 include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o: include/CMakeFiles/ai_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ale/AI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ale/AI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o"
 	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o -MF CMakeFiles/ai_lib.dir/__/src/ai.cpp.o.d -o CMakeFiles/ai_lib.dir/__/src/ai.cpp.o -c /home/ale/AI/src/ai.cpp
 
 include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.i: cmake_force
@@ -83,30 +97,16 @@ include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ai_lib.dir/__/src/ai.cpp.s"
 	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ale/AI/src/ai.cpp -o CMakeFiles/ai_lib.dir/__/src/ai.cpp.s
 
-include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o: include/CMakeFiles/ai_lib.dir/flags.make
-include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o: /home/ale/AI/src/main.cpp
-include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o: include/CMakeFiles/ai_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ale/AI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o"
-	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o -MF CMakeFiles/ai_lib.dir/__/src/main.cpp.o.d -o CMakeFiles/ai_lib.dir/__/src/main.cpp.o -c /home/ale/AI/src/main.cpp
-
-include/CMakeFiles/ai_lib.dir/__/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ai_lib.dir/__/src/main.cpp.i"
-	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ale/AI/src/main.cpp > CMakeFiles/ai_lib.dir/__/src/main.cpp.i
-
-include/CMakeFiles/ai_lib.dir/__/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ai_lib.dir/__/src/main.cpp.s"
-	cd /home/ale/AI/build/include && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ale/AI/src/main.cpp -o CMakeFiles/ai_lib.dir/__/src/main.cpp.s
-
 # Object files for target ai_lib
 ai_lib_OBJECTS = \
-"CMakeFiles/ai_lib.dir/__/src/ai.cpp.o" \
-"CMakeFiles/ai_lib.dir/__/src/main.cpp.o"
+"CMakeFiles/ai_lib.dir/__/src/layer.cpp.o" \
+"CMakeFiles/ai_lib.dir/__/src/ai.cpp.o"
 
 # External object files for target ai_lib
 ai_lib_EXTERNAL_OBJECTS =
 
+include/libai_lib.a: include/CMakeFiles/ai_lib.dir/__/src/layer.cpp.o
 include/libai_lib.a: include/CMakeFiles/ai_lib.dir/__/src/ai.cpp.o
-include/libai_lib.a: include/CMakeFiles/ai_lib.dir/__/src/main.cpp.o
 include/libai_lib.a: include/CMakeFiles/ai_lib.dir/build.make
 include/libai_lib.a: include/CMakeFiles/ai_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ale/AI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libai_lib.a"
