@@ -1,8 +1,8 @@
 project(ai)
 
 # file(GLOB LIB_SOURCES "src/*.cpp")
+# file(GLOB LIB_SOURCES "../src/*.cpp")
 
-file(GLOB LIB_SOURCES "../src/*.cpp")
 set(LIB_SOURCES
     ../src/layer.cpp
     ../src/ai.cpp

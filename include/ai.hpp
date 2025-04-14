@@ -17,7 +17,11 @@ public:
 
 private:
     Eigen::VectorXd feed_forward(const vector<float>& input);
+    void backpropagation(const int& epochs, const int& batch_size, const vector<float>& input, const vector<float>& target);
     float sigmoid(const float& x);
+    float sigmoid_derivative(const float& x);
+    float loss_MSR(const float& x, const float& y);
+    float dmsr_dy(const float& x, const float& y);
     vector<Layer> layers;
 };
 
