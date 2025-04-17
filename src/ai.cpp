@@ -33,6 +33,7 @@ Eigen::VectorXd AI::feed_forward(const vector<float>& input){
 
     // input_next_layer = sigmoid(input_vector * weights + biases)
     for(auto layer : layers){ // for all layers
+        layer.inputs_cache = input_vector;
         Eigen::VectorXd input_next_layer;
         for(int i = 0; i < layer.biases.rows(); i++){ // for one layer
             input_next_layer(i) = sigmoid(layer.weights.row(i).dot(input_vector) + layer.biases(i)); // for one neuron
@@ -61,31 +62,75 @@ float AI::dmsr_dy(const float& x, const float& y){
 
 void AI::backpropagation(const int& epochs, const int& batch_size, const vector<float>& input, const vector<float>& target){
     
-
-    Eigen::VectorXd output = feed_forward(input);
+    // target vector to eigen vector
     Eigen::VectorXd target_vector(input.size());
     for (int i = 0; i < target.size(); i++){
         target_vector(i) = target[i];
     }
 
+    Eigen::VectorXd output = feed_forward(input);
+    Eigen::VectorXd err = output - target_vector;
+
+    // derr/dy
     Eigen::VectorXd dloss_dy = output.binaryExpr(target_vector, [&](auto x, auto y){ return dmsr_dy(x, y); });
 
+    // sample value
     float eta = 0.001f;
     
+    // we need it?
     float last_derivates_w = dloss_dy.sum();
     float last_derivates_b = dloss_dy.sum();
 
+    Eigen::VectorXd middle_propagation;
+
+    Eigen::VectorXd dy_dz = output.unaryExpr([&](auto out){return out*(1-out);});
+
+    Eigen::VectorXd w_new;
+    Eigen::VectorXd b_new;
+    
     for(int i = 0; i < epochs; i++){
         for(vector<Layer>::reverse_iterator it = layers.rbegin(); it != layers.rend(); it++){
             
-            Eigen::VectorXd dw = it->weights.unaryExpr([&](auto w){ return it->activation_function_dw(w); });
-            Eigen::VectorXd db = it->biases.unaryExpr([&](auto b){ return it->activation_function_db(b); });
 
-            it->weights = it->weights - eta * (last_derivates_w * dw);
-            it->biases = it->biases - eta * (last_derivates_b * db);
+            // derr/dy * dy/dw 
+            // dy/dw = dy/ds * ds/dw 
 
-            last_derivates_w = (last_derivates_w * dw).sum();
-            last_derivates_b = (last_derivates_b * db).sum();
+            if(it == layers.rbegin()){
+
+            }
+
+            
+            vector<Layer>::reverse_iterator next_layer_it = prev(it);
+            Eigen::VectorXd dz_da(next_layer_it->weights.rows());
+            Eigen::VectorXd da_dz1 = it->weights.binaryExpr(it->inputs_cache, [&](auto w, auto x){ return it->activation_function_dw(w, x); });
+
+
+            
+            if(next_layer_it != layers.rbegin()){
+                for(int i = 0; i < next_layer_it->weights.rows(); i++){ 
+                    dz_da[i] = next_layer_it->weights.row(i).sum();
+                }
+            }
+            
+            
+            w_new;
+            b_new;
+
+            if(it != layers.rbegin()){
+                
+                b_new = dloss_dy * dy_dz;
+                w_new = dloss_dy * dy_dz * it->inputs_cache;
+                middle_propagation = dz_da * da_dz1;
+            }
+
+            else{
+                w_new = dloss_dy * dy_dz * middle_propagation * dz_da * da_dz1 * it->inputs_cache;
+                b_new = dloss_dy * dy_dz * middle_propagation * dz_da * da_dz1;
+            }
+            middle_propagation = middle_propagation * dz_da * da_dz1;
+            
+
+
 
         }
 
