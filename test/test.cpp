@@ -103,3 +103,13 @@ TEST(FeedforwardTest, OneTwoOneNetOutSize){
 
 }
 
+TEST(BackpropagationTest, LossMSR){
+  AI ai({1, 2, 1});
+  Eigen::VectorXf output = ai.feed_forward(vector<float>{1.0f});
+
+  ai.loss_MSR(output[0], 2.0f);
+
+  EXPECT_NEAR(ai.loss_MSR(output[0], 2.0f), 0.5625203f, 0.001f);
+
+}
+

@@ -19,6 +19,7 @@ public:
 #else
     private:
 #endif
+    Eigen::VectorXf vector2eigen_vector(const vector<float>& v);
     Eigen::VectorXf feed_forward(const vector<float>& input);
     void backpropagation(const int& epochs, const int& batch_size, const vector<float>& input, const vector<float>& target);
     float sigmoid(const float& x);

@@ -62,17 +62,23 @@ float AI::dmsr_dy(const float& x, const float& y){
     return (x - y);
 
 }
+Eigen::VectorXf AI::vector2eigen_vector(const vector<float>& v){
+
+    Eigen::VectorXf out(v.size());
+    for (int i = 0; i < v.size(); i++){
+        out(i) = v[i];
+    }
+
+    return out;
+}
+
 
 void AI::backpropagation(const int& epochs, const int& batch_size, const vector<float>& input, const vector<float>& target){
     
-    // target vector to eigen vector
-    Eigen::VectorXf target_vector(input.size());
-    for (int i = 0; i < target.size(); i++){
-        target_vector(i) = target[i];
-    }
+    Eigen::VectorXf target_vector = vector2eigen_vector(target);
 
     Eigen::VectorXf output = feed_forward(input);
-    Eigen::VectorXf err = output - target_vector;
+    Eigen::VectorXf err = output.binaryExpr(target_vector, [&](auto x, auto y){return loss_MSR(x, y);});
 
     // derr/dy
     Eigen::VectorXf dloss_dy = output.binaryExpr(target_vector, [&](auto x, auto y){ return dmsr_dy(x, y); });
@@ -105,9 +111,8 @@ void AI::backpropagation(const int& epochs, const int& batch_size, const vector<
             
             vector<Layer>::reverse_iterator next_layer_it = prev(it);
             Eigen::VectorXf dz_da(next_layer_it->weights.rows());
-            Eigen::VectorXf da_dz1 = it->weights.binaryExpr(it->inputs_cache, [&](auto w, auto x){ return it->activation_function_dw(w, x); });
-
-
+            
+            
             
             if(next_layer_it != layers.rbegin()){
                 for(int i = 0; i < next_layer_it->weights.rows(); i++){ 
@@ -115,10 +120,8 @@ void AI::backpropagation(const int& epochs, const int& batch_size, const vector<
                 }
             }
             
+            Eigen::VectorXf da_dz1 = it->inputs_cache.unaryExpr([&](auto x){ return x*(1-x); });
             
-            w_new;
-            b_new;
-
             if(it != layers.rbegin()){
                 
                 b_new = dloss_dy * dy_dz;
