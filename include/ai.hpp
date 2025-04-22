@@ -14,9 +14,12 @@ public:
     AI(const vector<int>& topology);
     ~AI();
 
-
-private:
-    Eigen::VectorXd feed_forward(const vector<float>& input);
+#ifdef UNIT_TEST
+    public:
+#else
+    private:
+#endif
+    Eigen::VectorXf feed_forward(const vector<float>& input);
     void backpropagation(const int& epochs, const int& batch_size, const vector<float>& input, const vector<float>& target);
     float sigmoid(const float& x);
     float sigmoid_derivative(const float& x);
