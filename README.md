@@ -1,4 +1,4 @@
-# 🧠 Cpp Embedded IA
+# 🧠 Cpp Embedded AI
 
 Uma biblioteca leve e eficiente de Inteligência Artificial embarcada, escrita em C++, com foco em aplicações em sistemas de tempo real, robótica e dispositivos de baixa potência.
 ---
