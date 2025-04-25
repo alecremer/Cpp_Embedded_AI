@@ -5,13 +5,6 @@
 
 using namespace std;
 
-// TEST(HelloTest, BasicAssertions) {
-//     // Expect two strings not to be equal.
-//     EXPECT_STRNE("hello", "world");
-//     // Expect equality.
-//     EXPECT_EQ(7 * 6, 42);
-//   }
-  
 
 TEST(NetTest, Sigmoid){
   AI ai({1, 2, 1});
@@ -107,9 +100,15 @@ TEST(BackpropagationTest, LossMSR){
   AI ai({1, 2, 1});
   Eigen::VectorXf output = ai.feed_forward(vector<float>{1.0f});
 
-  ai.loss_MSR(output[0], 2.0f);
-
   EXPECT_NEAR(ai.loss_MSR(output[0], 2.0f), 0.5625203f, 0.001f);
+
+}
+
+TEST(BackpropagationTest, UpdateBiasLast){
+  AI ai({1, 2, 1});
+  ai.backpropagation(1, 1, vector<float>{1.0f}, vector<float>{2.0f});
+
+  EXPECT_NEAR(ai.layers[2].biases[0], -0.353623138f, 0.001f);
 
 }
 

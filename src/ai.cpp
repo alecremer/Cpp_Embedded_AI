@@ -77,43 +77,35 @@ void AI::backpropagation(const int& epochs, const int& batch_size, const vector<
     
     Eigen::VectorXf target_vector = vector2eigen_vector(target);
 
-    Eigen::VectorXf output = feed_forward(input);
-    Eigen::VectorXf err = output.binaryExpr(target_vector, [&](auto x, auto y){return loss_MSR(x, y);});
-
-    // derr/dy
-    Eigen::VectorXf dloss_dy = output.binaryExpr(target_vector, [&](auto x, auto y){ return dmsr_dy(x, y); });
-
+    
     // sample value
     float eta = 0.001f;
     
-    // we need it?
-    float last_derivates_w = dloss_dy.sum();
-    float last_derivates_b = dloss_dy.sum();
-
+    
     Eigen::VectorXf middle_propagation;
-
-    Eigen::VectorXf dy_dz = output.unaryExpr([&](auto out){return out*(1-out);});
-
     Eigen::VectorXf w_new;
     Eigen::VectorXf b_new;
     
     for(int i = 0; i < epochs; i++){
+        
+        Eigen::VectorXf output = feed_forward(input);
+        Eigen::VectorXf err = output.binaryExpr(target_vector, [&](auto x, auto y){return loss_MSR(x, y);});
+        
+        // derr/dy
+        Eigen::VectorXf dloss_dy = output.binaryExpr(target_vector, [&](auto x, auto y){ return dmsr_dy(x, y); });
+        
+        Eigen::VectorXf dy_dz = output.unaryExpr([&](auto out){return out*(1-out);});
+
         for(vector<Layer>::reverse_iterator it = layers.rbegin(); it != layers.rend(); it++){
             
 
-            // derr/dy * dy/dw 
-            // dy/dw = dy/ds * ds/dw 
-
-            if(it == layers.rbegin()){
-
-            }
 
             
             vector<Layer>::reverse_iterator next_layer_it = prev(it);
             Eigen::VectorXf dz_da(next_layer_it->weights.rows());
             
             
-            
+            // get dz/da            
             if(next_layer_it != layers.rbegin()){
                 for(int i = 0; i < next_layer_it->weights.rows(); i++){ 
                     dz_da[i] = next_layer_it->weights.row(i).sum();
@@ -122,6 +114,7 @@ void AI::backpropagation(const int& epochs, const int& batch_size, const vector<
             
             Eigen::VectorXf da_dz1 = it->inputs_cache.unaryExpr([&](auto x){ return x*(1-x); });
             
+            // get new w and b
             if(it != layers.rbegin()){
                 
                 b_new = dloss_dy * dy_dz;
@@ -133,9 +126,13 @@ void AI::backpropagation(const int& epochs, const int& batch_size, const vector<
                 w_new = dloss_dy * dy_dz * middle_propagation * dz_da * da_dz1 * it->inputs_cache;
                 b_new = dloss_dy * dy_dz * middle_propagation * dz_da * da_dz1;
             }
+
+            // get middle propagation
             middle_propagation = middle_propagation * dz_da * da_dz1;
             
-
+            // update b and w
+            it->biases = it->biases - eta * b_new;
+            it->weights = it->weights - eta * w_new;
 
 
         }
